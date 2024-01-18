@@ -2,10 +2,10 @@
 
 ## Diagram
 
-Nati: Scenarios, Use Case diagram, State Chart diagram, ERD
+Nati: Scenarios, Use Case diagram, Class diagram, ERD
 Dawit: Sequence diagram, Deployment diagram
 Sumeya: Collaboration diagram
-Eden: Activity diagram, Class diagram
+Eden: Activity diagram, State Chart diagram
 Abdi: Component diagram, User interface design
 
 ## Writing
