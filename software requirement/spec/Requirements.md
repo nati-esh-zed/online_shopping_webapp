@@ -12,7 +12,7 @@
 
 ### Legal
 
-- The company must have legally registered and verified business document in the 
+- The company must have legally registered and verified business document in the
   country/area where it operates.
 - An End User License Agreement(EULA) must be properly written and provided for end users.
   Consider consulting lawyer.
@@ -21,7 +21,7 @@
 ## Users and User Accounts
 
 - User account creation, session management and administration.
-- There are customer, vendor, employees which include administrator, manager, lawyer and courier.
+- There are customer, vendor, administrator, employees which include manager, lawyer and courier.
 
 ### Vendors
 
@@ -50,7 +50,7 @@
 
 - There must be one administrator account.
 - Administrator must be able to:
-  - View and manage employees except themselves.
+  - View and manage employees.
   - Registration and removal of employees.
   - Setting the salaries of the employees.
   - Backing up data.
@@ -60,7 +60,7 @@
 - Managers must be able to hire and manage couriers. Management includes:
   - Hiring and firing couriers.
   - Assigning delivery tasks to couriers.
-  - Handling failing delivery cases.
+  - Handling failing delivery cases and conflicts.
   - Consulting and assigning lawyers to cases that require legal action.
 
 #### Lawyers
