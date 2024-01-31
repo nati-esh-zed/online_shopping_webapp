@@ -579,6 +579,135 @@ Bots and spamming can be prevented using Captchas.
   - **System state on completion:**
     The failing delivery task is recorded as failing with the detailed reason and proof attached to it. And a new delivery task recorded on the database and is properly associated with courier and order.
 
+##### 3.4.1.12 Scenario for a courier viewing assigned delivery task
+
+- **Initial assumption:**
+    The  courier has opened the web-app on a modern browser using the proper URL, and they are currently logged in into the system.
+- **Normal flow of events:**
+    The courier is notified of assigned delivery tasks and follows the notification and views the delivery task with the related orders. Then the courier accepts the delivery task.
+- **What can go wrong:**
+    The courier rejects the delivery task by specifying a reason.
+- **System state on completion:**
+    The delivery task status is changed to active and associated with the accepting courier.
+
+##### 3.4.1.13 Scenario for a courier requesting items from vendor
+
+- **Initial assumption:**
+    The  courier has opened the web-app on a modern browser using the proper URL, and they are currently logged in into the system. And they have accepted a delivery task.
+- **Normal flow of events:**
+    The courier drives to the vendor that provides the items in the order assigned. The courier contacts the vendor and notifies them of arrival and asks to take the items for delivery. Then the vendor gives the requested items to the courier by following the proper item exchange steps. The courier only accepts the items that are in the expected condition and reports the other items that are not in the expected condition. The courier then delivers the items to the customer's receiving location.
+- **What can go wrong:**
+    The courier rejects the items in unexpected condition and reports them.
+- **System state on completion:**
+    The delivery task status is changed to en-route with the received items' states set to being delivered.
+
+##### 3.4.1.14 Scenario for a courier confirming delivery of items to customer
+
+- **Initial assumption:**
+    The  courier has opened the web-app on a modern browser using the proper URL, and they are currently logged in into the system. And they have accepted a delivery task and now en route to the customer's receiving location.
+- **Normal flow of events:**
+    The courier then arrives with the items at the customer's receiving location. If the location is a post office box then the courier fills the required forms and gives it to the post office. Or if the location is a place where the customer waits for the items then the courier contacts the customer and meets them to give them their items.  
+- **What can go wrong:**
+    The courier rejects the items in unexpected condition and reports them.
+- **System state on completion:**
+    The delivery task status is changed to completed with the received items' states set to deposited if the location is a post office.  
+    The delivery task status is changed to delivered with the received items' states set to transferring if the location is the customers receiving location.
+
+##### 3.4.1.15 Scenario for a courier confirming transfer of items to customer
+
+- **Initial assumption:**
+    The  courier has opened the web-app on a modern browser using the proper URL, and they are currently logged in into the system. And they have accepted a delivery task and now meeting the customer to transfer items.
+- **Normal flow of events:**
+    The courier asks them to view and fill out the item acceptance form on the web-app. The customer views the delivered items and accepts those that are in the expected condition and rejects those that are not in the expected condition by specifying proper reasons. Then the courier gives the accepted items to the customer and takes back the rejected items. The courier confirms the transfer of items to customer.
+- **What can go wrong:**
+    The customer rejects the items in unexpected condition and reports them.
+- **System state on completion:**
+    The delivery task status is changed to completed with the received items' states set to transferred.
+
+##### 3.4.1.16 Scenario for a customer confirming delivery of items
+
+- **Initial assumption:**
+    The customer has opened the web-app on a modern browser using the proper URL, and they are currently logged in into the system. And they have been notified of the incoming delivery and now meeting the courier to receive items.
+- **Normal flow of events:**
+    The courier asks them to view and fill out the item acceptance form on the web-app. The customer views the delivered items and accepts those that are in the expected condition and rejects those that are not in the expected condition by specifying proper reasons. Then the courier gives the accepted items to the customer and takes back the rejected items. The courier confirms the transfer of items to customer.
+- **What can go wrong:**
+    The customer rejects the items in unexpected condition and reports them.
+- **System state on completion:**
+    The delivery task status is changed to completed with the received items' states set to transferred.
+
+##### 3.4.1.17 Scenario for a customer browsing items in stock
+
+- **Initial assumption:**
+    The customer has opened the web-app on a modern browser using the proper URL, and they are currently logged in into the system.
+- **Normal flow of events:**
+    The customer enters keywords on the search-bar and chooses filter criteria and clicks on browse. Then a limited list of available items is presented to them for picking.
+- **What can go wrong:**
+    There are no items found.
+
+##### 3.4.1.18 Scenario for a customer putting items in cart
+
+- **Initial assumption:**
+    The customer has opened the web-app on a modern browser using the proper URL, and they are currently logged in into the system. And the customer is now browsing for items.
+- **Normal flow of events:**
+    The customer picks from the items presented and clicks on the put-in-cart button. Then the picked items are added to the customer's cart.
+- **What can go wrong:**
+    The items put in cart are out of stock.
+- **System state on completion:**
+    The customers cart is aggregated with the picked items using cart-item table in the database. cart-item table contains item reference and quantity information and is associated with a cart.
+
+##### 3.4.1.19 Scenario for a customer views items in cart
+
+- **Initial assumption:**
+    The customer has opened the web-app on a modern browser using the proper URL, and they are currently logged in into the system. And the customer has opened up their cart by clicked on my-cart button.
+- **Normal flow of events:**
+    The customer is presented with the list of items in their cart with information such as name, brief description, quantity, and price per item, and total price, delivery costs, and other fees.
+- **What can go wrong:**
+    The items put in cart are out of stock. The customer must remove the items before purchasing.
+- **System state on completion:**
+    The customers cart is aggregated with the picked items using cart-item table in the database. cart-item table contains item reference and quantity information and is associated with a cart.
+
+##### 3.4.1.20 Scenario for a customer removes items from cart
+
+- **Initial assumption:**
+    The customer has opened the web-app on a modern browser using the proper URL, and they are currently logged in into the system. And the customer has opened up their cart by clicked on my-cart button.
+- **Normal flow of events:**
+    The customer is presented with the list of items in their cart. They select items in their cart and click on remove. Then they are prompted to confirm removal of items from cart. Then the items are removed from their cart.
+- **What can go wrong:**
+    The items cancels the removal of items.
+- **System state on completion:**
+    The customers cart is cleared of the removed cart-items in the database.
+
+##### 3.4.1.21 Scenario for a customer changes quantity of items in their cart
+
+- **Initial assumption:**
+    The customer has opened the web-app on a modern browser using the proper URL, and they are currently logged in into the system. And the customer has opened up their cart by clicked on my-cart button.
+- **Normal flow of events:**
+    The customer is presented with the list of items in their cart. They click on the amount number input and enter a new amount or they can click on decrement or increment buttons if provided. Then the quantity of the items in their cart will be changed.
+- **What can go wrong:**
+    The items cancels the removal of items.
+- **System state on completion:**
+    The quantity of items in the customer's cart is updated in the database.
+
+##### 3.4.1.22 Scenario for a customer purchases items in their cart
+
+- **Initial assumption:**
+    The customer has opened the web-app on a modern browser using the proper URL, and they are currently logged in into the system. And the customer has opened up their cart by clicked on my-cart button.
+- **Normal flow of events:**
+    The customer is presented with the list of items in their cart. They are done viewing and modifying their cart and now ready to make a purchase. They click on the purchase button. Then they are provided with payment options which they choose from and complete payment using supported payment APIs. Upon successful payment a new order is created, and the transaction recorded and associated with the order. The money paid is stored in company owned customers-holding bank account.
+- **What can go wrong:**
+    The payment fails.
+- **System state on completion:**
+    A new order is created and associated with cart-items and transaction record in the database.
+
+##### 3.4.1.23 Scenario for completion of delivery
+
+- **Initial assumption:**
+    The courier has successfully delivered items to customer and the customer has accepted the items delivered.
+- **Normal flow of events:**
+    The money paid by the customer is transferred to the vendor minus fees and costs, and this transaction record  is then associated with the order.
+- **System state on completion:**
+    The order is associated with the transaction record and set to completed status in the database.
+
 #### 3.5.2 Use Case Model
 
 ![session-use-case-diagram](media/session-use-case-diagram.drawio.svg)  
