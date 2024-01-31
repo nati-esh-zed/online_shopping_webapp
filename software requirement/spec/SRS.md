@@ -45,6 +45,8 @@
   - [1.8 Significance of the Project](#18-significance-of-the-project)
   - [1.9 Beneficiaries of the Project](#19-beneficiaries-of-the-project)
   - [1.10 Methodology](#110-methodology)
+    - [1.10.1 Requirement Elicitation Methods](#1101-requirement-elicitation-methods)
+    - [1.10.2 Software Development Method](#1102-software-development-method)
   - [1.11 Development Tools](#111-development-tools)
     - [1.11.1 Hardware Tools](#1111-hardware-tools)
     - [1.11.2 Software Tools](#1112-software-tools)
@@ -227,6 +229,14 @@ The beneficiaries of this project are:
 - Employees, such as Managers and couriers.
 
 ### 1.10 Methodology
+
+#### 1.10.1 Requirement Elicitation Methods
+
+We used interview, online research, and group discussion methods to gather and form software requirements for this project. We have viewed and analyzed some of the local and international most used online shopping websites like Amazon and Tolo Mart. We have also done some research on the proclamations regarding trading and national payment systems in Ethiopia.
+
+#### 1.10.2 Software Development Method
+
+We use Agile model which has an incremental and iterative approach to software development. We aim to develop the system within a very short amount of time with as much features implemented as possible. We use modern version control tools like git and Github to aid us in collaboration and in incremental and iterative software development.
 
 ### 1.11 Development Tools
 
