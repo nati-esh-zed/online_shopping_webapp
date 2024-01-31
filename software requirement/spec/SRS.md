@@ -709,7 +709,18 @@ Bots and spamming can be prevented using Captchas.
 - **System state on completion:**
     A new order is created and associated with cart-items and transaction record in the database.
 
-##### 3.4.1.23 Scenario for completion of delivery
+##### 3.4.1.23 Scenario for a customer canceling an order
+
+- **Initial assumption:**
+    The customer has opened the web-app on a modern browser using the proper URL, and they are currently logged in into the system. And the customer has opened up their list of orders by clicking on my-orders button.
+- **Normal flow of events:**
+    The customer is presented with the list of orders they have made. They select the orders they want to cancel and then click on cancel-order. Then they are prompted for confirmation and reminded of the consequences of canceling the order(s). If they confirm then the orders will be set to canceled and any progress to deliver the items in the orders(s) is undone and costs and fees are deducted before the money is returned back to the customer. These means items will be returned back to the vendor if they were in the process of being delivered.
+- **What can go wrong:**
+    The customer does not confirm cancellation of the order(s).
+- **System state on completion:**
+    The orders' status is set to canceled and the items' states to in-stock in the database.
+
+##### 3.4.1.24 Scenario for completion of delivery
 
 - **Initial assumption:**
     The courier has successfully delivered items to customer and the customer has accepted the items delivered.
