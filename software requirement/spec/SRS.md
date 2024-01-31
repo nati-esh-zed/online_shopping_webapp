@@ -71,14 +71,11 @@
     - [3.4.7 Security](#347-security)
   - [3.5 System Model](#35-system-model)
     - [3.5.1 Scenarios](#351-scenarios)
-    - [3.5.2 Use Case Model](#352-use-case-model)
-  - [365 Object Model](#36-object-model)
-    - [3.6.1 Data dictionary](#361-data-dictionary)
-  - [3.6 Dynamic Model](#37-dynamic-model)
-    - [3.7.1 Class Diagram](#371-class-diagram)
-    - [3.7.2 Sequence Diagram](#372-sequence-diagram)
-    - [3.7.3 Activity Diagram](#373-activity-diagram)
-    - [3.7.4 State Chart Diagram](#374-state-chart-diagram)
+    - [3.5.2 Use Case Model](#352-use-case-diagram)
+    - [3.5.3 Class Diagram](#353-class-diagram)
+    - [3.5.4 Sequence Diagram](#354-sequence-diagram)
+    - [3.5.5 Activity Diagram](#355-activity-diagram)
+    - [3.5.6 State Chart Diagram](#356-state-chart-diagram)
 - [Chapter 4 | System Design](#chapter-4--system-design)
   - [4.1 Overview](#41-overview)
   - [4.2 Proposed System Architecture](#42-proposed-system-architecture)
@@ -87,8 +84,9 @@
     - [4.2.3 Persistent Data Management](#423-persistent-data-management)
     - [4.2.4 Component Diagram](#424-component-diagram)
     - [4.2.5 Database Design](#425-database-design)
-    - [4.2.6 Access Control](#426-access-control)
-    - [4.2.7 User Interface Design](#427-user-interface-design)
+    - [4.2.6 Data Dictionary](#426-data-dictionary)
+    - [4.2.7 Access Control](#427-access-control)
+    - [4.2.8 User Interface Design](#428-user-interface-design)
 - [Chapter 5 | Implementation](#chapter-5--implementation)
   - [5.1 Overview](#51-overview)
   - [5.2 Coding Standard](#52-coding-standard)
@@ -472,7 +470,7 @@ Bots and spamming can be prevented using Captchas.
 
 #### 3.5.1 Scenarios
 
-##### 3.4.1.1 Scenario for registering in the system
+##### 1 Scenario for registering in the system
 
 - **Initial assumption:**
     The user has opened the web-app on a modern browser using the proper URL, either for the first time or after logging out previously.
@@ -483,7 +481,7 @@ Bots and spamming can be prevented using Captchas.
 - **System state on completion:**
     The user is registered successfully in the system. The user information provided is stored on a database in the system. The password is hashed before storing.
 
-##### 3.4.1.2 Scenario for logging in into the system
+##### 2 Scenario for logging in into the system
 
 - **Initial assumption:**
     The user has opened the web-app on a modern browser using the proper URL, either for the first time or after logging out previously.
@@ -494,7 +492,7 @@ Bots and spamming can be prevented using Captchas.
 - **System state on completion:**
     The back-end server creates a session and the session cookie is stored on the browser used for automatic login until expiry date.
 
-##### 3.4.1.3 Scenario for resetting password
+##### 3 Scenario for resetting password
 
 - **Initial assumption:**
     The user has opened the web-app on a modern browser using the proper URL, either for the first time or after logging out previously. And they are trying to login but they forgot their password.
@@ -505,7 +503,7 @@ Bots and spamming can be prevented using Captchas.
 - **System state on completion:**
     The password is hashed and then updated on the database.
 
-##### 3.4.1.4 Scenario for logging out of the system
+##### 4 Scenario for logging out of the system
 
 - **Initial assumption:**
     The user has opened the web-app on a modern browser using the proper URL, and they are currently logged in into the system.
@@ -514,7 +512,7 @@ Bots and spamming can be prevented using Captchas.
 - **System state on completion:**
     The session is destroyed. And the session cookie is discarded.
 
-##### 3.4.1.5 Scenario for an administrator registering an employee in the system
+##### 5 Scenario for an administrator registering an employee in the system
 
 - **Initial assumption:**
     The administrator has opened the web-app on a modern browser using the proper URL, and they are currently logged in into the system.
@@ -525,7 +523,7 @@ Bots and spamming can be prevented using Captchas.
 - **System state on completion:**
     The employee information is stored on the database.
 
-##### 3.4.1.6 Scenario for an administrator firing an employee
+##### 6 Scenario for an administrator firing an employee
 
 - **Initial assumption:**
     The administrator has opened the web-app on a modern browser using the proper URL, and they are currently logged in into the system.
@@ -536,7 +534,7 @@ Bots and spamming can be prevented using Captchas.
 - **System state on completion:**
     The employee information on the database is marked as fired and archived after a certain amount of time.
 
-##### 3.4.1.7 Scenario for an administrator setting the salary of an employee
+##### 7 Scenario for an administrator setting the salary of an employee
 
 - **Initial assumption:**
     The administrator has opened the web-app on a modern browser using the proper URL, and they are currently logged in into the system.
@@ -547,7 +545,7 @@ Bots and spamming can be prevented using Captchas.
 - **System state on completion:**
     The employee salary information on the database is updated to the new amount.
 
-##### 3.4.1.8 Scenario for a manager registering a courier in the system
+##### 8 Scenario for a manager registering a courier in the system
 
 - **Initial assumption:**
     The manager has opened the web-app on a modern browser using the proper URL, and they are currently logged in into the system.
@@ -558,7 +556,7 @@ Bots and spamming can be prevented using Captchas.
 - **System state on completion:**
     The courier employee information is stored on the database.
 
-##### 3.4.1.9 Scenario for a manager firing a courier
+##### 9 Scenario for a manager firing a courier
 
 - **Initial assumption:**
     The manager has opened the web-app on a modern browser using the proper URL, and they are currently logged in into the system.
@@ -569,7 +567,7 @@ Bots and spamming can be prevented using Captchas.
 - **System state on completion:**
     The courier employee information on the database is marked as fired and archived after a certain amount of time.
 
-##### 3.4.1.10 Scenario for a manager assigning a delivery task to a courier
+##### 10 Scenario for a manager assigning a delivery task to a courier
 
 - **Initial assumption:**
     The manager has opened the web-app on a modern browser using the proper URL, and they are currently logged in into the system.
@@ -580,7 +578,7 @@ Bots and spamming can be prevented using Captchas.
 - **System state on completion:**
     A delivery task is recorded on the database and is properly associated with courier and order.
 
-##### 3.4.1.11 Scenario for a manager handling a failing delivery case
+##### 11 Scenario for a manager handling a failing delivery case
 
 - **Initial assumption:**
     The manager has opened the web-app on a modern browser using the proper URL, and they are currently logged in into the system.
@@ -589,7 +587,7 @@ Bots and spamming can be prevented using Captchas.
   - **System state on completion:**
     The failing delivery task is recorded as failing with the detailed reason and proof attached to it. And a new delivery task recorded on the database and is properly associated with courier and order.
 
-##### 3.4.1.12 Scenario for a courier viewing assigned delivery task
+##### 12 Scenario for a courier viewing assigned delivery task
 
 - **Initial assumption:**
     The  courier has opened the web-app on a modern browser using the proper URL, and they are currently logged in into the system.
@@ -600,7 +598,7 @@ Bots and spamming can be prevented using Captchas.
 - **System state on completion:**
     The delivery task status is changed to active and associated with the accepting courier.
 
-##### 3.4.1.13 Scenario for a courier requesting items from vendor
+##### 13 Scenario for a courier requesting items from vendor
 
 - **Initial assumption:**
     The  courier has opened the web-app on a modern browser using the proper URL, and they are currently logged in into the system. And they have accepted a delivery task.
@@ -611,7 +609,7 @@ Bots and spamming can be prevented using Captchas.
 - **System state on completion:**
     The delivery task status is changed to en-route with the received items' states set to being delivered.
 
-##### 3.4.1.14 Scenario for a courier confirming delivery of items to customer
+##### 14 Scenario for a courier confirming delivery of items to customer
 
 - **Initial assumption:**
     The  courier has opened the web-app on a modern browser using the proper URL, and they are currently logged in into the system. And they have accepted a delivery task and now en route to the customer's receiving location.
@@ -623,7 +621,7 @@ Bots and spamming can be prevented using Captchas.
     The delivery task status is changed to completed with the received items' states set to deposited if the location is a post office.  
     The delivery task status is changed to delivered with the received items' states set to transferring if the location is the customers receiving location.
 
-##### 3.4.1.15 Scenario for a courier confirming transfer of items to customer
+##### 15 Scenario for a courier confirming transfer of items to customer
 
 - **Initial assumption:**
     The  courier has opened the web-app on a modern browser using the proper URL, and they are currently logged in into the system. And they have accepted a delivery task and now meeting the customer to transfer items.
@@ -634,7 +632,7 @@ Bots and spamming can be prevented using Captchas.
 - **System state on completion:**
     The delivery task status is changed to completed with the received items' states set to transferred.
 
-##### 3.4.1.16 Scenario for a customer confirming delivery of items
+##### 16 Scenario for a customer confirming delivery of items
 
 - **Initial assumption:**
     The customer has opened the web-app on a modern browser using the proper URL, and they are currently logged in into the system. And they have been notified of the incoming delivery and now meeting the courier to receive items.
@@ -645,7 +643,7 @@ Bots and spamming can be prevented using Captchas.
 - **System state on completion:**
     The delivery task status is changed to completed with the received items' states set to transferred.
 
-##### 3.4.1.17 Scenario for a customer browsing items in stock
+##### 17 Scenario for a customer browsing items in stock
 
 - **Initial assumption:**
     The customer has opened the web-app on a modern browser using the proper URL, and they are currently logged in into the system.
@@ -654,7 +652,7 @@ Bots and spamming can be prevented using Captchas.
 - **What can go wrong:**
     There are no items found.
 
-##### 3.4.1.18 Scenario for a customer putting items in cart
+##### 18 Scenario for a customer putting items in cart
 
 - **Initial assumption:**
     The customer has opened the web-app on a modern browser using the proper URL, and they are currently logged in into the system. And the customer is now browsing for items.
@@ -665,7 +663,7 @@ Bots and spamming can be prevented using Captchas.
 - **System state on completion:**
     The customers cart is aggregated with the picked items using cart-item table in the database. cart-item table contains item reference and quantity information and is associated with a cart.
 
-##### 3.4.1.19 Scenario for a customer views items in cart
+##### 19 Scenario for a customer views items in cart
 
 - **Initial assumption:**
     The customer has opened the web-app on a modern browser using the proper URL, and they are currently logged in into the system. And the customer has opened up their cart by clicked on my-cart button.
@@ -676,7 +674,7 @@ Bots and spamming can be prevented using Captchas.
 - **System state on completion:**
     The customers cart is aggregated with the picked items using cart-item table in the database. cart-item table contains item reference and quantity information and is associated with a cart.
 
-##### 3.4.1.20 Scenario for a customer removes items from cart
+##### 20 Scenario for a customer removes items from cart
 
 - **Initial assumption:**
     The customer has opened the web-app on a modern browser using the proper URL, and they are currently logged in into the system. And the customer has opened up their cart by clicked on my-cart button.
@@ -687,7 +685,7 @@ Bots and spamming can be prevented using Captchas.
 - **System state on completion:**
     The customers cart is cleared of the removed cart-items in the database.
 
-##### 3.4.1.21 Scenario for a customer changes quantity of items in their cart
+##### 21 Scenario for a customer changes quantity of items in their cart
 
 - **Initial assumption:**
     The customer has opened the web-app on a modern browser using the proper URL, and they are currently logged in into the system. And the customer has opened up their cart by clicked on my-cart button.
@@ -698,7 +696,7 @@ Bots and spamming can be prevented using Captchas.
 - **System state on completion:**
     The quantity of items in the customer's cart is updated in the database.
 
-##### 3.4.1.22 Scenario for a customer purchases items in their cart
+##### 22 Scenario for a customer purchases items in their cart
 
 - **Initial assumption:**
     The customer has opened the web-app on a modern browser using the proper URL, and they are currently logged in into the system. And the customer has opened up their cart by clicked on my-cart button.
@@ -709,7 +707,7 @@ Bots and spamming can be prevented using Captchas.
 - **System state on completion:**
     A new order is created and associated with cart-items and transaction record in the database.
 
-##### 3.4.1.23 Scenario for a customer canceling an order
+##### 23 Scenario for a customer canceling an order
 
 - **Initial assumption:**
     The customer has opened the web-app on a modern browser using the proper URL, and they are currently logged in into the system. And the customer has opened up their list of orders by clicking on my-orders button.
@@ -720,7 +718,7 @@ Bots and spamming can be prevented using Captchas.
 - **System state on completion:**
     The orders' status is set to canceled and the items' states to in-stock in the database.
 
-##### 3.4.1.24 Scenario for completion of delivery
+##### 24 Scenario for completion of delivery
 
 - **Initial assumption:**
     The courier has successfully delivered items to customer and the customer has accepted the items delivered.
@@ -729,7 +727,7 @@ Bots and spamming can be prevented using Captchas.
 - **System state on completion:**
     The order is associated with the transaction record and set to completed status in the database.
 
-#### 3.5.2 Use Case Model
+#### 3.5.2 Use Case Diagram
 
 ![session-use-case-diagram](media/session-use-case-diagram.drawio.svg)  
 ![main-use-case-diagram-1](media/main-use-case-diagram-1.drawio.svg)  
@@ -739,19 +737,13 @@ Bots and spamming can be prevented using Captchas.
 ![main-use-case-diagram-1](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/main-use-case-diagram-1.drawio.svg)
 ![main-use-case-diagram-2](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/main-use-case-diagram-2.drawio.svg) -->
 
-### 3.6 Object Model
+#### 3.5.3 Class Diagram
 
-#### 3.6.1 Data dictionary
+#### 3.5.4 Sequence Diagram
 
-### 3.7 Dynamic Model
+#### 3.5.5 Activity Diagram
 
-#### 3.7.1 Class Diagram
-
-#### 3.7.2 Sequence Diagram
-
-#### 3.7.3 Activity Diagram
-
-#### 3.7.4 State Chart Diagram
+#### 3.5.6 State Chart Diagram
 
 ### Chapter 4 | System Design
 
@@ -769,9 +761,11 @@ Bots and spamming can be prevented using Captchas.
 
 #### 4.2.5 Database Design
 
-#### 4.2.6 Access Control
+#### 4.2.6 Data Dictionary
 
-#### 4.2.7 User Interface Design
+#### 4.2.7 Access Control
+
+#### 4.2.8 User Interface Design
 
 ## Chapter 5 | Implementation
 
