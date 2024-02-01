@@ -312,15 +312,15 @@ These proclamations are considered for the design and working of this system.
 > **6/** The Exchange shall, on the basis of the net obligation statement, instruct the affiliated recognized Clearing Institutions to settle the obligations of the Members.  
 > **7/** The Exchange and Members shall be allowed to give standing written instructions to affiliated recognized Clearing Institutions to authorize such institutions to transfer funds to and from Member and Exchange Accounts established in these same institutions for the purposes of Exchange transactions, on the basis of an electronic instruction.  
 > **8/** Notwithstanding provisions of any law, regulation, directive or customary practice that requires a signature be handwritten in order to have legal effect or enforceability, signature requirement under Sub-Article (7) of this Article is met if an electronic signature is used to authorize fund  transfers.  
-> **9/** Any Clearing Institution shall not engage in trading activity within or outside the exchange.
+> **9/** Any Clearing Institution shall not engage in trading activity within or outside the exchange.  
 
 > **Proclamation No. 550/2007 Article 29**  
-> The Exchange shall provide and maintain a system for protection of personal, financial, trade and other data relating to the affairs of the Exchange.
+> The Exchange shall provide and maintain a system for protection of personal, financial, trade and other data relating to the affairs of the Exchange.  
 
 > **Proclamation No. 1282/2023 Article 6**  
-> **1/** Application for license to be a payment instrument issuer or payment system operator shall be submitted to the National Bank.
-> **3/** A business organization other than financial institution and government owned enterprise intending to be licensed as a payment instrument issuer or a payment system operator shall establish a subsidiary exclusively for the purpose.
-> **6/** An applicant for payment instrument issuer and payment system operator shall fulfill minimum paid up capital as may be prescribed by the National Bank directive.
+> **1/** Application for license to be a payment instrument issuer or payment system operator shall be submitted to the National Bank.  
+> **3/** A business organization other than financial institution and government owned enterprise intending to be licensed as a payment instrument issuer or a payment system operator shall establish a subsidiary exclusively for the purpose.  
+> **6/** An applicant for payment instrument issuer and payment system operator shall fulfill minimum paid up capital as may be prescribed by the National Bank directive.  
 
 The company that owns and operates this system must hire lawyers to handle all legal cases.  
 The company must operate in accordance to these laws.
