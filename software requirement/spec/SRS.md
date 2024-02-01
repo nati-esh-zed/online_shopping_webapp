@@ -78,7 +78,7 @@
     - [3.5.6 State Chart Diagram](#356-state-chart-diagram)
 - [Chapter 4 | System Design](#chapter-4--system-design)
   - [4.1 Overview](#41-overview)
-  - [4.2 Proposed System Architecture](#42-proposed-system-architecture)
+  - [4.2 System Architecture](#42-system-architecture)
     - [4.2.1 Subsystem Decomposition](#421-subsystem-decomposition)
     - [4.2.2 Hardware and Software Mapping](#422-hardware-and-software-mapping)
     - [4.2.3 Persistent Data Management](#423-persistent-data-management)
@@ -86,7 +86,7 @@
     - [4.2.5 Database Design](#425-database-design)
     - [4.2.6 Data Dictionary](#426-data-dictionary)
     - [4.2.7 Access Control](#427-access-control)
-    - [4.2.8 User Interface Design](#428-user-interface-design)
+  - [4.3 User Interface Design](#428-user-interface-design)
 - [Chapter 5 | Implementation](#chapter-5--implementation)
   - [5.1 Overview](#51-overview)
   - [5.2 Coding Standard](#52-coding-standard)
@@ -110,9 +110,18 @@
 
 ## Acknowledgment
 
-Thanks to our FSE teacher for giving us this opportunity to do this project and for teaching and guiding us on how to do this project. Thanks to Alemu Tadesse for advising us and giving us feedback on the UML diagrams. 
+Thanks to our FSE teacher for giving us this opportunity to do this project and for teaching and guiding us on how to do this project. Thanks to Alemu Tadesse for advising us and giving us feedback on the UML diagrams.
 
 ## Definitions
+
+- [MySQL](https://www.mysql.com/)
+  > MySQL is a popular open source database management system that offers various features, tools, and services  for data warehousing, analytics, machine learning, and more.
+- [Node.js](https://nodejs.org)
+  > Node.js® is an open-source and cross-platform JavaScript runtime environment that executes JavaScript code outside of a web browser 1. Node.js is widely used for developing web applications, APIs, microservices, and more.
+- [Hapi.js](https://hapi.dev/)
+  > hapi.js is an open-source and secure framework for developing web services and applications with Node.js. hapi.js offers a simple, modular, and extensible architecture that allows you to focus on your business logic and not on the details of the tool. hapi.js also provides a rich ecosystem of official plugins and third-party modules that cover various features and functionalities, such as authentication, validation, caching, logging, and more.
+- [React.js](https://react.dev/)
+  > React.js is an open-source and cross-platform JavaScript library for building user interfaces and single-page applications. React.js uses a component-based approach to create reusable and interactive UI elements. React.js also supports features such as hooks, state management, routing, and more.
 
 ## Acronyms and Abbreviations
 
@@ -123,6 +132,8 @@ Thanks to our FSE teacher for giving us this opportunity to do this project and 
 | API                     | Application Programming Interface    |
 | PHP                     | Hypertext Preprocessor               |
 | UI                      | User Interface                       |
+| DBMS                    | Database Management System           |
+| ERD                     | Entity Relationship Diagram          |
 
 ## Chapter 1
 
@@ -250,6 +261,7 @@ We use Agile model which has an incremental and iterative approach to software d
 - VSCode: for coding and general text editing.
 - [CloudConvert](https://cloudconvert.com) for converting markdown files to docx and pdf.
 - Draw.io: for designing modeling diagrams.
+- MySQL Workbench: for managing database and designing ERD.
 - Microsoft Edge, Google Chrome: for testing and debugging webapp, and browsing the web for resources.
 
 ## Chapter 2 | Description of Existing Systems
@@ -749,13 +761,15 @@ Bots and spamming can be prevented using Captchas.
 
 ### 4.1 Overview
 
-### 4.2 Proposed System Architecture
+### 4.2 System Architecture
 
 #### 4.2.1 Subsystem Decomposition
 
 #### 4.2.2 Hardware and Software Mapping
 
 #### 4.2.3 Persistent Data Management
+
+Persistent data in this system include database, image and other attachment files. The database is managed locally on the server using DBMS such as MySQL. Image and other attachment files are stored in the filesystem and privately accessed through a properly authorized request.
 
 #### 4.2.4 Component Diagram
 
@@ -807,10 +821,21 @@ Bots and spamming can be prevented using Captchas.
 
 ## References
 
+[Ethiopia Commodity Exchange Proclamation No. 550 of 2007](https://leap.unep.org/en/countries/et/national-legislation/ethiopia-commodity-exchange-proclamation-no-550-2007)  
 [National Payment System(Amendment) Proclamation No.1282/2023](https://nbe.gov.et/files/national-payment-systemamendment-proclamation-no-1282-2023/)  
-[Ethiopia Commodity Exchange Proclamation (No. 550 of 2007)](https://leap.unep.org/en/countries/et/national-legislation/ethiopia-commodity-exchange-proclamation-no-550-2007)  
 
 [Node.js SQL Injection Guide Examples and Prevention](https://www.stackhawk.com/blog/node-js-sql-injection-guide-examples-and-prevention/)  
 [Best Practices To Prevent DDoS Attacks](https://securityscorecard.com/blog/best-practices-to-prevent-ddos-attacks/)  
 [How To Avoid Time-based DDoS Attacks In Node.js](https://www.nearform.com/blog/avoid-time-based-ddos-attacks-node-js/)  
 [A quick way for hashing passwords using Bcrypt with Nodejs](https://medium.com/@manishsundriyal/a-quick-way-for-hashing-passwords-using-bcrypt-with-nodejs-8464f9785b67)  
+
+[Being iterative and incremental in software development](https://nulab.com/learn/software-development/iterative-incremental-software-development/)  
+[What is the Best Place for Storing Uploaded Images](https://stackoverflow.com/questions/348363/what-is-the-best-place-for-storing-uploaded-images-sql-database-or-disk-file-sy)
+
+[Data Dictionary](https://www.splunk.com/en_us/blog/learn/data-dictionary.html)
+
+[StackOverflow](https://stackoverflow.com/)  
+[MySQL](https://www.mysql.com/)  
+[Node.js](https://nodejs.org)  
+[Hapi.js](https://hapi.dev/)  
+[React.js](https://react.dev/)  
