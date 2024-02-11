@@ -1,7 +1,10 @@
 # Online Shopping Web-app Software Requirement Specification
 
+<div style="text-align: center">
 <img src="./media/astu-logo.png" height="100px" alt="ASTU Logo"></img>
-<!-- <img src="(https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/astu-logo.png" height="100px" alt="ASTU Logo"></img> -->
+<!-- <img src="https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/astu-logo.png" height="100px" alt="ASTU Logo" style="float: center"></img> -->
+</div>
+<!-- ![astu-logo](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/astu-logo.png) -->
 <h1>Adama Science and Technology University</h1>
 
 |                        |                                                     |
@@ -71,8 +74,8 @@
     - [3.4.7 Security](#347-security)
   - [3.5 System Model](#35-system-model)
     - [3.5.1 Scenarios](#351-scenarios)
-    - [3.5.2 Use Case Model](#352-use-case-diagram)
-    - [3.5.3 Class Diagram](#353-class-diagram)
+    - [3.5.2 Use Case Diagram](#352-use-case-diagram)
+    - [3.5.3 Entity Relationship Diagram](#353-entity-relationship-diagram)
     - [3.5.4 Sequence Diagram](#354-sequence-diagram)
     - [3.5.5 Activity Diagram](#355-activity-diagram)
     - [3.5.6 State Chart Diagram](#356-state-chart-diagram)
@@ -110,7 +113,7 @@
 
 ## Acknowledgment
 
-Thanks to our FSE teacher for giving us this opportunity to do this project and for teaching and guiding us on how to do this project. Thanks to Alemu Tadesse for advising us and giving us feedback on the UML diagrams.
+First of all thank God for everything. And thanks to our FSE teacher for giving us this opportunity to do this project and for teaching and guiding us on how to do this project. Thanks to Alemu Tadesse for advising us and giving us feedback on the UML diagrams.
 
 ## Definitions
 
@@ -741,15 +744,21 @@ Bots and spamming can be prevented using Captchas.
 
 #### 3.5.2 Use Case Diagram
 
-![session-use-case-diagram](media/session-use-case-diagram.drawio.svg)  
-![main-use-case-diagram-1](media/main-use-case-diagram-1.drawio.svg)  
-![main-use-case-diagram-2](media/main-use-case-diagram-2.drawio.svg)  
+![use-case-diagram--actors](media/use-case/actors.drawio.svg)  
+![use-case-diagram--session](media/use-case/session-management.drawio.svg)  
+![use-case-diagram--main-1](media/use-case/main-1.drawio.svg)  
+![use-case-diagram--main-2](media/use-case/main-2.drawio.svg)  
 
-<!-- ![session-use-case-diagram](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/session-use-case-diagram.drawio.svg)
-![main-use-case-diagram-1](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/main-use-case-diagram-1.drawio.svg)
-![main-use-case-diagram-2](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/main-use-case-diagram-2.drawio.svg) -->
+<!-- ![use-case-diagram--actors](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/use-case/actors.drawio.svg)  
+![use-case-diagram--session](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/use-case/session-management.drawio.svg)  
+![use-case-diagram--main-1](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/use-case/main-1.drawio.svg)  
+![use-case-diagram--main-2](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/use-case/main-2.drawio.svg)   -->
 
-#### 3.5.3 Class Diagram
+#### 3.5.3 Entity Relationship Diagram
+
+![entity-relationship--ER](media/entity-relationship/on-shop-EER-UML.svg)  
+
+<!-- ![entity-relationship--ER](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/entity-relationship/on-shop-EER-UML.svg)   -->
 
 #### 3.5.4 Sequence Diagram
 
