@@ -748,11 +748,13 @@ Bots and spamming can be prevented using Captchas.
 ![use-case-diagram--session](media/use-case/session-management.drawio.svg)  
 ![use-case-diagram--main-1](media/use-case/main-1.drawio.svg)  
 ![use-case-diagram--main-2](media/use-case/main-2.drawio.svg)  
+![use-case-diagram--main-3](media/use-case/main-3.drawio.svg)  
 
 <!-- ![use-case-diagram--actors](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/use-case/actors.drawio.svg)  
 ![use-case-diagram--session](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/use-case/session-management.drawio.svg)  
 ![use-case-diagram--main-1](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/use-case/main-1.drawio.svg)  
-![use-case-diagram--main-2](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/use-case/main-2.drawio.svg)   -->
+![use-case-diagram--main-2](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/use-case/main-2.drawio.svg)  
+![use-case-diagram--main-3](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/use-case/main-3.drawio.svg)   -->
 
 #### 3.5.3 Entity Relationship Diagram
 
