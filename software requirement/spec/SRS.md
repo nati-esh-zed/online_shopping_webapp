@@ -10,6 +10,7 @@
 |                        |                                                     |
 | ---------------------- | ----------------------------------------------------|
 | School                 | **Electrical Engineering and Computing**            |
+| School                 | **School of Electrical Engineering and Computing**  |
 | Department             | **Computer Science and Engineering**                |
 | Course                 | **Fundamentals of Software Engineering (CSEg3201)** |
 | Semester Project Title | **Online Shopping Web-app**                         |
@@ -86,8 +87,7 @@
     - [4.2.4 Persistent Data Management](#424-persistent-data-management)
     - [4.2.5 Database Design](#425-database-design)
     - [4.2.5.1 Entity Relationship Diagram](#4251-entity-relationship-diagram)
-    - [4.2.6 Data Dictionary](#426-data-dictionary)
-    - [4.2.7 Access Control](#427-access-control)
+    - [4.2.6 Access Control](#426-access-control)
   - [4.3 User Interface Design](#43-user-interface-design)
 - [Chapter 5 | Implementation](#chapter-5--implementation)
   - [5.1 Overview](#51-overview)
@@ -824,13 +824,26 @@ The database can be design using a great tool such as MySQL Workbench which prov
 
 <!-- ![entity-relationship--ER](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/entity-relationship/on-shop-EER-UML.svg)   -->
 
-#### 4.2.6 Data Dictionary
-
-#### 4.2.7 Access Control
+#### 4.2.6 Access Control
 
 Access to database will be managed mainly by the provided MySQL server access control system and using predefined procedures and selective access grants.
 
 Access to images and other attachment files will be stored in a private directory and managed by a router on the backend server which fulfills requests based on proper authorizations.
+
+**Access Matrix**:
+
+> Let DB stand for Database and PRM stand for Private Resource Manager.  
+> PRM.Attachment represents image files or other attachments files.
+
+| Actor          | DB.Routine Call   | DB.Table Select    | DB.Table Update   | DB.Table Delete    | PRM.Attachment Fetch | PRM.Attachment Upload |
+| -------------- | ----------------- | ------------------ | ----------------- | ------------------ | -------------------- | --------------------- |
+| Admin          | Any               | Any                | Any               | Any                | Any                  | Any                   |
+| User           | Self,BankAccount  | Self,BankAccount   | Self,BankAccount  | Self,BankAccount   | Self                 | Self                  |
+| Employee       | Self              | Self               | Self              | Self               | Self                 | Self                  |
+| Manager        | Self,Employee     | Self,Employee      | Self,Employee     | Self,Employee      | Self,Employee        | Self,Employee         |
+| Courier        | Self              | Self               | Self              | Self               | Self                 | Self                  |
+| Customer       | Self,Cart         | Self,Cart          | Self,Cart         | Self,Cart          | Self                 | Self                  |
+| Vendor         | Self,Stock        | Self,Stock         | Self,Stock        | Self,Stock         | Self                 | Self                  |
 
 #### 4.3 User Interface Design
 
@@ -840,33 +853,69 @@ We will use Bootstrap 5 and react-icons to design a responsive and modern UI. Bo
 
 ### 5.1 Overview
 
+This system is going to be implemented using a Node.js environment using libraries React.js, Hapi.js, Bootstrap 5, React-Icons. And as much of the targeted features are going to be implemented incrementally and improved iteratively.
+
 ### 5.2 Coding Standard
 
-### 5.3 Development Tools
+The programming languages to be used are HTML, CSS, Javascript, Typescript.
 
-### 5.4 Prototype
+#### HTML Coding Standards
 
-### 5.5 Implementation Detail
+- HTML-5 should be used.
+- Tags and attributes should be broken into on a new line if the line-character-count exceeds 100.
+- Start and end tags should either be on the same line, if small, or on different lines with the same indent.
+- Tag attributes should be broken into new lines and indented by one more than the tags indent with the closing `>` or `/>` sign not on a new line by itself.
+
+#### CSS Coding Standards
+
+- CSS3 should be used.
+- Selectors should be broken into on a new line if the line-character-count exceeds 100.
+- Style definitions should be indented once compared to the parent indent.
+
+### Javascript Coding Standards
+
+- Code should be broken into a new line if the line-character-count exceeds 100.
+- Braces should be on the same line at the end. like so `const foo = function() {`, `if(...) {`, `} else {`
+- No spaces should be put between keyword or function name and the parenthesis after. like so `for(`, `if(`, `function foo(`
+- Self-explanatory names should be chosen as compared to redundant and verbose comments.
+
+### 5.5 Prototype
+
+The basic prototype should implement session-management and the forms/pages prioritized from most important to least important.
+The implementations should be filled with stubs and later implemented.
+
+### 5.6 Implementation Detail
+
+#### Authentication
+
+- Session-cookie based authentication will be used to track session data. The session cookie will be created if the user has logged in with valid credentials.
+
+...
 
 ## Chapter 6 | Testing
 
 ### 6.1 Introduction
 
+Unit tests can be prepared and used to test individual components of the system where unit testing is required. And integration testing can either be prepared code or user interaction testing and the least required regression testing should be done with each integration.
+
 ### 6.2 Scope
+
+Testing should focus on error/bug avoidance, exception handling and providing a good user experience.
 
 ### 6.3 Resources
 
+Testing libraries.
+
 ### 6.4 Schedule
 
-### 6.5 Test Case Scenario
+Testing should be done before pushing to the central repo to ensure a working code is integrated into the system.  
+Other than that regular user-interaction testing should be done to get feedback and bug reports.
 
-### 6.6 Pass Fail Criteria
+### 6.5 Estimated Risk and Contingency Plan
 
-### 6.7 Approach
+One major risk is that sufficient testing has not been implemented and thus the system will have vulnerabilities. This can be avoided by doing enough research on features that require high security and provide very important functionality. Professional advice should be sought and considered.
 
-### 6.8 Test Case Specification
-
-### 6.9 Estimated Risk and Contingency Plan
+In case of failure of new version of the system the system should be changed to a previous stable version. And the failing version of the system should be put under evaluation for bad test implementations.
 
 ## Chapter 7 | User Manual and Demo
 
