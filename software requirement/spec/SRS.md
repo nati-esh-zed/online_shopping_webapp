@@ -810,21 +810,27 @@ The subsystems are going to be deployed on certain hardwares. Here are the softw
 
 <!-- ![component-diagram](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/component/component-diagram..drawiosvg)   -->
 
-#### 4.2.4 Persistent Data Management
+#### 4.2.4 Deployment Diagram
+
+![deployment-diagram--ER](media/deployment/deployment-diagram.drawio.svg)  
+
+<!-- ![deployment-diagram](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/deployment/deployment-diagram..drawiosvg)   -->
+
+#### 4.2.5 Persistent Data Management
 
 Persistent data in this system include database records, images and other attachment files. The database will be managed locally on the server using DBMS such as MySQL and accessed and modified through an API. Image and other attachment files are stored in the filesystem and privately accessed through a properly authorized request router.
 
-#### 4.2.5 Database Design
+#### 4.2.6 Database Design
 
 The database can be design using a great tool such as MySQL Workbench which provides all the features needed for fast and reliable database design. It provides visual diagraming, backward and forward engineering features among other basic features.
 
-##### 4.2.5.1 Entity Relationship Diagram
+##### 4.2.7 Entity Relationship Diagram
 
 ![entity-relationship--ER](media/entity-relationship/on-shop-EER-UML.svg)  
 
 <!-- ![entity-relationship--ER](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/entity-relationship/on-shop-EER-UML.svg)   -->
 
-#### 4.2.6 Access Control
+#### 4.2.8 Access Control
 
 Access to database will be managed mainly by the provided MySQL server access control system and using predefined procedures and selective access grants.
 
