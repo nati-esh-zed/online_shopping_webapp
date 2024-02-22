@@ -136,6 +136,7 @@ First of all thank God for everything. And thanks to our FSE teacher for giving 
 | UI                      | User Interface                       |
 | DBMS                    | Database Management System           |
 | ERD                     | Entity Relationship Diagram          |
+| MVC                     | Model View Controller                |
 
 ## Chapter 1
 
@@ -769,13 +770,15 @@ Bots and spamming can be prevented using Captchas.
 
 ![login-session--seq](media/sequence/login-session.drawio.svg)  
 ![customer-purchase--seq](media/sequence/customer-purchase.drawio.svg)  
-![customer-purchase--seq](media/sequence/vendor-stock.drawio.svg)  
-![customer-purchase--seq](media/sequence/manager-courier.drawio.svg)  
+![vendor-stock--seq](media/sequence/vendor-stock.drawio.svg)  
+![manager-courier--seq](media/sequence/manager-courier.drawio.svg)  
+![courier-delivery--seq](media/sequence/courier-delivery.drawio.svg)  
 
 <!-- ![login-session--seq](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/sequence/login-session.drawio.svg)  
 ![customer-purchase--seq](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/sequence/customer-purchase.drawio.svg)  
 ![vendor-stock--seq](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/sequence/vendor-stock.drawio.svg)
-![vendor-stock--seq](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/sequence/manager-courier.drawio.svg)   -->
+![manager-courier--seq](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/sequence/manager-courier.drawio.svg)  
+![courier-delivery--seq](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/sequence/courier-delivery.drawio.svg)   -->
 
 #### 3.5.5 Collaboration Diagram
 
@@ -783,13 +786,21 @@ Bots and spamming can be prevented using Captchas.
 
 <!-- ![collaboration--diag](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/collaboration/collaboration.drawio.svg)  -->
 
-### Chapter 4 | System Design
+## Chapter 4 | System Design
 
 ### 4.1 Overview
 
+After analysis modeling the next step is creating system design based on that analysis models.
+
 ### 4.2 System Architecture
 
+The architecture model that is best to use for this project is the MVC model. However there is a constant client-server communication thus it might seem as if it is a hybrid of MVC and client-server architecture models. The controller is going to be both client-side and server-side.
+
+One of the best software out there at this time are Node.js and React.js which are best fit for this architecture model. React.js offers a dynamic client-side MVC functionality and Node.js offers single-threaded high performance backend servers such as Hapi.js and a lot of 3rd party library support.
+
 #### 4.2.1 Subsystem Decomposition
+
+The overall system now has to be decomposed into subsystems. 
 
 #### 4.2.2 Hardware and Software Mapping
 
