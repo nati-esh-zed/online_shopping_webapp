@@ -75,20 +75,20 @@
   - [3.5 System Model](#35-system-model)
     - [3.5.1 Scenarios](#351-scenarios)
     - [3.5.2 Use Case Diagram](#352-use-case-diagram)
-    - [3.5.3 Entity Relationship Diagram](#353-entity-relationship-diagram)
-    - [3.5.4 Sequence Diagram](#354-sequence-diagram)
-    - [3.5.5 Collaboration Diagram](#355-collaboration-diagram)
+    - [3.5.3 Sequence Diagram](#353-sequence-diagram)
+    - [3.5.4 Collaboration Diagram](#354-collaboration-diagram)
 - [Chapter 4 | System Design](#chapter-4--system-design)
   - [4.1 Overview](#41-overview)
   - [4.2 System Architecture](#42-system-architecture)
     - [4.2.1 Subsystem Decomposition](#421-subsystem-decomposition)
     - [4.2.2 Hardware and Software Mapping](#422-hardware-and-software-mapping)
-    - [4.2.3 Persistent Data Management](#423-persistent-data-management)
-    - [4.2.4 Component Diagram](#424-component-diagram)
+    - [4.2.3 Component Diagram](#423-component-diagram)
+    - [4.2.4 Persistent Data Management](#424-persistent-data-management)
     - [4.2.5 Database Design](#425-database-design)
+    - [4.2.5.1 Entity Relationship Diagram](#4251-entity-relationship-diagram)
     - [4.2.6 Data Dictionary](#426-data-dictionary)
     - [4.2.7 Access Control](#427-access-control)
-  - [4.3 User Interface Design](#428-user-interface-design)
+  - [4.3 User Interface Design](#43-user-interface-design)
 - [Chapter 5 | Implementation](#chapter-5--implementation)
   - [5.1 Overview](#51-overview)
   - [5.2 Coding Standard](#52-coding-standard)
@@ -112,7 +112,7 @@
 
 ## Acknowledgment
 
-First of all thank God for everything. And thanks to our FSE teacher for giving us this opportunity to do this project and for teaching and guiding us on how to do this project. Thanks to Alemu Tadesse for advising us and giving us feedback on the UML diagrams.
+First of all thank God for everything. And thanks to our FSE teacher Mr. Megersa Daraje for giving us this opportunity to do this project and for teaching and guiding us on how to do this project. Thanks to Alemu Tadesse for advising us and giving us feedback on the UML diagrams.
 
 ## Definitions
 
@@ -124,6 +124,8 @@ First of all thank God for everything. And thanks to our FSE teacher for giving 
   > hapi.js is an open-source and secure framework for developing web services and applications with Node.js. hapi.js offers a simple, modular, and extensible architecture that allows you to focus on your business logic and not on the details of the tool. hapi.js also provides a rich ecosystem of official plugins and third-party modules that cover various features and functionalities, such as authentication, validation, caching, logging, and more.
 - [React.js](https://react.dev/)
   > React.js is an open-source and cross-platform JavaScript library for building user interfaces and single-page applications. React.js uses a component-based approach to create reusable and interactive UI elements. React.js also supports features such as hooks, state management, routing, and more.
+- Router on the backend server
+  > A router in this context means the part of the server that directs URL requests to specific resources.
 
 ## Acronyms and Abbreviations
 
@@ -760,13 +762,7 @@ Bots and spamming can be prevented using Captchas.
 ![use-case-diagram--main-2](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/use-case/main-2.drawio.svg)  
 ![use-case-diagram--main-3](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/use-case/main-3.drawio.svg)   -->
 
-#### 3.5.3 Entity Relationship Diagram
-
-![entity-relationship--ER](media/entity-relationship/on-shop-EER-UML.svg)  
-
-<!-- ![entity-relationship--ER](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/entity-relationship/on-shop-EER-UML.svg)   -->
-
-#### 3.5.4 Sequence Diagram
+#### 3.5.3 Sequence Diagram
 
 ![login-session--seq](media/sequence/login-session.drawio.svg)  
 ![customer-purchase--seq](media/sequence/customer-purchase.drawio.svg)  
@@ -780,7 +776,7 @@ Bots and spamming can be prevented using Captchas.
 ![manager-courier--seq](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/sequence/manager-courier.drawio.svg)  
 ![courier-delivery--seq](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/sequence/courier-delivery.drawio.svg)   -->
 
-#### 3.5.5 Collaboration Diagram
+#### 3.5.4 Collaboration Diagram
 
 ![collaboration--diag](media/collaboration/collaboration.drawio.svg)  
 
@@ -794,29 +790,51 @@ After analysis modeling the next step is creating system design based on that an
 
 ### 4.2 System Architecture
 
-The architecture model that is best to use for this project is the MVC model. However there is a constant client-server communication thus it might seem as if it is a hybrid of MVC and client-server architecture models. The controller is going to be both client-side and server-side.
+The architecture model that is best to use for this project is a hybrid MVC and server-client architecture model. The MVC architecture is on the client side and since there is client-server communication there is also a server-client architecture model.
 
 One of the best software out there at this time are Node.js and React.js which are best fit for this architecture model. React.js offers a dynamic client-side MVC functionality and Node.js offers single-threaded high performance backend servers such as Hapi.js and a lot of 3rd party library support.
 
 #### 4.2.1 Subsystem Decomposition
 
-The overall system now has to be decomposed into subsystems. 
+The overall system now has to be decomposed into subsystems. The subsystems of this system are user management system, employee management system, session management system, email token-verification system, delivery management system, vendor-stock management system, payment system, item-cart system, item search and filter system.
 
 #### 4.2.2 Hardware and Software Mapping
 
-#### 4.2.3 Persistent Data Management
+The subsystems are going to be deployed on certain hardwares. Here are the software hardware mappings:
 
-Persistent data in this system include database, image and other attachment files. The database is managed locally on the server using DBMS such as MySQL. Image and other attachment files are stored in the filesystem and privately accessed through a properly authorized request.
+- user management system, employee management system, session management system, email token-verification system, delivery management system, vendor-stock management system, payment system, item-cart system, item search and filter system.
 
-#### 4.2.4 Component Diagram
+#### 4.2.3 Component Diagram
+
+![component-diagram--ER](media/component/component-diagram.drawio.svg)  
+
+<!-- ![component-diagram](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/component/component-diagram..drawiosvg)   -->
+
+#### 4.2.4 Persistent Data Management
+
+Persistent data in this system include database records, images and other attachment files. The database will be managed locally on the server using DBMS such as MySQL and accessed and modified through an API. Image and other attachment files are stored in the filesystem and privately accessed through a properly authorized request router.
 
 #### 4.2.5 Database Design
+
+The database can be design using a great tool such as MySQL Workbench which provides all the features needed for fast and reliable database design. It provides visual diagraming, backward and forward engineering features among other basic features.
+
+##### 4.2.5.1 Entity Relationship Diagram
+
+![entity-relationship--ER](media/entity-relationship/on-shop-EER-UML.svg)  
+
+<!-- ![entity-relationship--ER](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/entity-relationship/on-shop-EER-UML.svg)   -->
 
 #### 4.2.6 Data Dictionary
 
 #### 4.2.7 Access Control
 
-#### 4.2.8 User Interface Design
+Access to database will be managed mainly by the provided MySQL server access control system and using predefined procedures and selective access grants.
+
+Access to images and other attachment files will be stored in a private directory and managed by a router on the backend server which fulfills requests based on proper authorizations.
+
+#### 4.3 User Interface Design
+
+We will use Bootstrap 5 and react-icons to design a responsive and modern UI. Bootstrap 5 offers a wide variety of styles, responsive designs and scripts for interactivity by just using HTML classes. React-Icons provides a wide variety of icons for use in Node.js and React.js.
 
 ## Chapter 5 | Implementation
 
