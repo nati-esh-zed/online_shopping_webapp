@@ -1,8 +1,8 @@
 # Online Shopping Web-app Software Requirement Specification
 
 <div style="text-align: center">
-<img src="./media/astu-logo.png" height="100px" alt="ASTU Logo"></img>
-<!-- <img src="https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/astu-logo.png" height="100px" alt="ASTU Logo" style="float: center"></img> -->
+<img src="./media/astu-logo.png" height="200px" alt="ASTU Logo"></img>
+<!-- <img src="https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/astu-logo.png" height="200px" alt="ASTU Logo" style="float: center"></img> -->
 </div>
 <!-- ![astu-logo](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/astu-logo.png) -->
 <h1>Adama Science and Technology University</h1>
@@ -77,8 +77,7 @@
     - [3.5.2 Use Case Diagram](#352-use-case-diagram)
     - [3.5.3 Entity Relationship Diagram](#353-entity-relationship-diagram)
     - [3.5.4 Sequence Diagram](#354-sequence-diagram)
-    - [3.5.5 Activity Diagram](#355-activity-diagram)
-    - [3.5.6 State Chart Diagram](#356-state-chart-diagram)
+    - [3.5.5 Collaboration Diagram](#355-collaboration-diagram)
 - [Chapter 4 | System Design](#chapter-4--system-design)
   - [4.1 Overview](#41-overview)
   - [4.2 System Architecture](#42-system-architecture)
@@ -298,7 +297,11 @@ Some only provide shopping of specific categories of products/items such as cars
 
 ## Chapter 3 | Proposed System
 
+The proposed system for the project is described in Chapter 3 of this Communication. The first step is to define business rules, followed by describing functional requirements such as users and user accounts, payment and item exchange. The chapter then goes on to investigate the non functional requirements, which include operational, legal, user interface, performance, reliability, error handling and security.In order to provide a comprehensive overview of the proposed system, the system model is also presented, including scenarios, use case diagrams, entity relationships diagrams, sequence diagrams, activity diagrams, and state diagrams.
+
 ### 3.1 Overview
+
+The proposed system for the project is described in this chapter of this Communication. The first step is to define business rules, followed by describing functional requirements such as users and user accounts, payment and item exchange. The chapter then goes on to investigate the non functional requirements, which include operational, legal, user interface, performance, reliability, error handling and security.In order to provide a comprehensive overview of the proposed system, the system model is also presented, including scenarios, use case diagrams, entity relationships diagrams, sequence diagrams, activity diagrams, and state diagrams.
 
 ### 3.2 Business Rule
 
@@ -764,9 +767,21 @@ Bots and spamming can be prevented using Captchas.
 
 #### 3.5.4 Sequence Diagram
 
-#### 3.5.5 Activity Diagram
+![login-session--seq](media/sequence/login-session.drawio.svg)  
+![customer-purchase--seq](media/sequence/customer-purchase.drawio.svg)  
+![customer-purchase--seq](media/sequence/vendor-stock.drawio.svg)  
+![customer-purchase--seq](media/sequence/manager-courier.drawio.svg)  
 
-#### 3.5.6 State Chart Diagram
+<!-- ![login-session--seq](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/sequence/login-session.drawio.svg)  
+![customer-purchase--seq](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/sequence/customer-purchase.drawio.svg)  
+![vendor-stock--seq](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/sequence/vendor-stock.drawio.svg)
+![vendor-stock--seq](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/sequence/manager-courier.drawio.svg)   -->
+
+#### 3.5.5 Collaboration Diagram
+
+![collaboration--diag](media/collaboration/collaboration.drawio.svg)  
+
+<!-- ![collaboration--diag](https://raw.githubusercontent.com/nati8333/online_shopping_webapp/main/software%20requirement/spec/media/collaboration/collaboration.drawio.svg)  -->
 
 ### Chapter 4 | System Design
 
